@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Development Life Map</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #222; /* Solid dark background */
+      color: #ffffff;
+      font-family: 'Arial', sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      background-color: #333; /* Solid dark gray background */
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    }
+    h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-align: center;
+      color: #ffcc00; /* Yellow for the title */
+      margin-bottom: 20px;
+    }
+    .age-block {
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      position: absolute;
+      width: 100%;
+    }
+    .age-block.active {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+      position: relative;
+    }
+    .category {
+      margin-top: 15px;
+      padding: 15px;
+      background-color: #444; /* Solid gray background for categories */
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    .category h5 {
+      font-size: 1.2rem;
+      color: #ffcc00; /* Yellow for category titles */
+    }
+    .category p {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+    .reflection {
+      font-style: italic;
+      margin-top: 10px;
+      display: none;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+    }
+    .reflection.show {
+      display: block;
+      max-height: 200px;
+    }
+    .btn-reflection {
+      background-color: #ffcc00; /* Yellow buttons */
+      color: #000000; /* Black text */
+      border: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .btn-reflection:hover {
+      background-color: #ffaa00; /* Darker yellow on hover */
+      transform: scale(1.05);
+    }
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+    .nav-buttons button {
+      background-color: #ffcc00; /* Yellow navigation buttons */
+      color: #000000; /* Black text */
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .nav-buttons button:hover {
+      background-color: #ffaa00; /* Darker yellow on hover */
+      transform: scale(1.1);
+    }
+    .reflection-image {
+      width: 100%; /* Adjust the width as needed */
+      max-width: 300px; /* Limit the maximum width */
+      height: auto; /* Maintain aspect ratio */
+      margin-top: 10px; /* Add spacing above the image */
+      border-radius: 10px; /* Optional: Add rounded corners */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional: Add a shadow */
+      display: block; /* Ensure the image is displayed as a block element */
+    }
+  </style>
+</head>
+<body>
+  <div class="container d-flex justify-content-between">
+    <!-- Content Section -->
+    <div class="content">
+      <h1>Personal Development Life Map</h1>
+
+      <!-- Age Blocks -->
+      <div id="age-1-3" class="age-block active">
+        <h3>Ages 1–3</h3>
+        <div class="category">
+          <h5>Physical Development</h5>
+          <p>Took my first steps and started walking.</p>
+          <button class="btn btn-sm btn-reflection" onclick="toggleReflection(this)">Show Reflection</button>
+          <div class="reflection">
+            Reflection: I don't clearly remember learning to walk, but from what I've been told, I didn't fall very often—probably because I wasn't the type of child who explored much except if i was in a playground. I tended to stay in one place instead.
+          </div>
+        </div>
+        <div class="category">
+          <h5>Cognitive Development</h5>
+          <p>Recognized faces and objects.</p>
+          <button class="btn btn-sm btn-reflection" onclick="toggleReflection(this)">Reflection</button>
+          <div class="reflection">
+            Reflection: At this age I learned who my parents were, My Dad actually had a twin and him and his twin made me guess who my Dad is but I guessed it correctly:]
+          </div>
+        </div>
+        <div class="category">
+          <h5>Moral Development</h5>
+          <p>Imitated behavior of parents.</p>
+          <button class="btn btn-sm btn-reflection" onclick="toggleReflection(this)">Show Reflection</button>
+          <div class="reflection">
+            Reflection: I usually imitated the behavior of my parents simply because they were my role model back then, all they do is right from my perspective when I was at this age.
+          </div>
+        </div>
+        <div class="category">
+          <h5>Psychosocial Development</h5>
+          <p>Formed first emotional bonds with family.</p>
+          <button class="btn btn-sm btn-reflection" onclick="toggleReflection(this)">Show Reflection</button>
+          <div class="reflection">
+            Reflection: I was too young to remember the details, but I know this was when I started forming strong bonds with my family. Even though I couldn’t talk yet, I could feel their love through how they held me, played with me, and made me feel safe. I think those early connections gave me a sense of trust and comfort that stuck with me as I grew up.
+          </div>
+        </div>
+      </div>
+
+      <div id="age-4-7" class="age-block">
+        <h3>Ages 4–7</h3>
+        <div class="category">
+          <h5>Physical Development</h5>
+          <p> Improved coordination and balance. </p>
+          <button class="btn btn-sm btn-reflection" onclick="toggleReflection(this)">Show Reflection</button>
+          <div class="reflection">
+            Reflection: I started getting the hang of my body a bit more. I remember being proud of things like climbing playground stuff or riding a bike (with training wheels, of course). It felt good to be able to move confidently and not feel so clumsy all the time.
+          </div>
+        </div>
+        <div class="category">
+          <h5>Cognitive Development</h5>
+          <p>Learned alphabet and numbers.</p>
+          <button class="btn btn-sm btn-reflection" onclick="toggleReflection(this)">Show Reflection</button>
+          <div class="reflection">
+            Reflection: I don’t remember exactly how I learned the alphabet and numbers, but I do remember being super proud when I could finally recite them. I’d randomly count stuff around me or say the ABCs just because it made me feel clever. It was probably one of the first times I felt like I was really learning something.
+          </div>
+        </div>
+        <div class="category">
+          <h5>Moral Development</h5>
+          <p>Learned about fairness through play.</p>
+          <button class="btn btn-sm btn-reflection" onclick="toggleReflection(this)">Show Reflection</button>
+          <div class="reflection">
+            Reflection: I think I started to understand what’s fair and what’s not through simple games with friends. Like, if someone cheated or didn’t take turns, it just didn’t feel right. I remember getting upset over little things, but that’s how I started to get the idea that fairness matters, even in play.
+          </div>
+        </div>
+        <div class="category">
+          <h5>Psychosocial Development</h5>
+          <p>Made first school friends.</p>
+          <button class="btn btn-sm btn-reflection" onclick="toggleReflection(this)">Show Reflection</button>
+          <div class="reflection">
+            Reflection: Making my first school friends was a big deal. I was a little shy at first, but once I found people to laugh and play with, school started to feel a lot more fun. It was the start of learning how to connect with others outside of family.
+          </div>
+        </div>
+      </div>
+
+      <div id="age-8-11" class="age-block">
+        <h3>Ages 8–11</h3>
+        <div class="category">
+          <h5>Physical Development</h5>
+          <p>Participated in school sports day.</p>
+          <button class="btn btn-sm btn-reflection" onclick="toggleReflection(this)">Show Reflection</button>
+          <div class="reflection">Reflection: During this time, I started playing badminton and even joined the school’s sports day events. It wasn’t just about winning it felt good to be active, compete, and represent something. I think badminton helped me develop discipline and better coordination early on.</div>
+        </div>
+        <div class="category">
+          <h5>Cognitive Development</h5>
+          <p>Read independently and explored books.</p>
+          <button class="btn btn-sm btn-reflection" onclick="toggleReflection(this)">Show Reflection</button>
+          <div class="reflection">Reflection: This was the time I really got into reading on my own. I didn’t just stick to fun stories, I started getting curious about real-world stuff too. Some books made me think about how things work in the world, and how not everything is fair. It kind of opened my eyes and got me thinking more deeply, even if I didn’t fully get it all back then.</div>
+        </div>
+        <div class="category">
+          <h5>Moral Development</h5>
+          <p>Learned to forgive and ask forgiveness.</p>
+          <button class="btn btn-sm btn-reflection" onclick="toggleReflection(this)">Show Reflection</button>
+          <div class="reflection">Reflection: Back then, I started to understand that sometimes I hurt people’s feelings, even if I didn’t mean to. I also learned how good it felt when someone forgave me, and how important it was to say sorry. It wasn’t always easy, but those little moments really taught me a lot about being a better friend.</div>
+        </div>
+        <div class="category">
+          <h5>Psychosocial Development</h5>
+          <p>Handled conflicts with friends.</p>
+          <button class="btn btn-sm btn-reflection" onclick="toggleReflection(this)">Show Reflection</button>
+          <div class="reflection">Reflection: There were times when me and my friends got into arguments over small things like games, turns, or just misunderstandings. I remember slowly figuring out how to talk things through instead of just staying mad or walking away. It wasn’t perfect, but learning how to fix things with them helped me feel closer to people and more confident in dealing with problems.</div>
+        </div>
+      </div>
+
+      <div id="age-12-15" class="age-block">
+        <h3>Ages 12–15</h3>
+        <div class="category">
+          <h5>Physical Development</h5>
+          <p>Joined a gym and focused on stamina.</p>
+          <button class="btn btn-sm btn-reflection" onclick="toggleReflection(this)">Show Reflection</button>
+          <div class="reflection">Reflection: I started going to the gym around this time. At first, I was just curious, but later on I really got into it. I wasn’t super athletic before, but working on my stamina made me feel healthier and more confident. It also helped me build a routine, even though i get lazy sometimes (currently haven't been on the gym for 5 months lol)</div>
+        </div>
+        <div class="category">
+          <h5>Cognitive Development</h5>
+          <p>Joined a chess club in school.</p>
+          <button class="btn btn-sm btn-reflection" onclick="toggleReflection(this)">Show Reflection</button>
+          <div class="reflection">Reflection: I joined the chess club at school and it was actually really fun. I didn’t even know all the rules, but I got better the more I played. It helped me think more before making decisions, and I liked playing with friends and trying to win matches. It made school more exciting too.</div>
+        </div>
+        <div class="category">
+          <h5>Moral Development</h5>
+          <p>Reflected on right vs. popular.</p>
+          <button class="btn btn-sm btn-reflection" onclick="toggleReflection(this)">Show Reflection</button>
+          <div class="reflection">Reflection: There were times in school when I had to choose between doing what I knew was right and just going along with what everyone else was doing. It was kind of hard, especially when I didn’t want to be left out. But I learned that it feels better to stand up for what I believe in, even if it's not the popular choice.</div>
+        </div>
+        <div class="category">
+          <h5>Psychosocial Development</h5>
+          <p>Developed stronger identity.</p>
+          <button class="btn btn-sm btn-reflection" onclick="toggleReflection(this)">Show Reflection</button>
+          <div class="reflection">Reflection: During this time, I started to understand myself better. I figured out what I liked, what I stood for, and how I wanted to be seen. I wasn’t just copying others anymore. I was becoming more comfortable just being me.</div>
+        </div>
+      </div>
+
+      <div id="age-16-17" class="age-block">
+        <h3>Ages 16–17</h3>
+        <div class="category">
+          <h5>Physical Development</h5>
+          <p>Reached physical maturity.</p>
+          <button class="btn btn-sm btn-reflection" onclick="toggleReflection(this)">Show Reflection</button>
+          <div class="reflection">Reflection: At this age, I started to notice that I wasn’t growing as much anymore, and my body felt more developed. It felt kinda weird at first, but also like, “Okay, I guess this is part of growing up.” I became more aware of my health and how I take care of myself, like eating better and trying to get enough sleep even if I still mess that up sometimes.</div>
+        </div>
+        <div class="category">
+          <h5>Cognitive Development</h5>
+          <p>Explored future career interests.</p>
+          <button class="btn btn-sm btn-reflection" onclick="toggleReflection(this)">Show Reflection</button>
+          <div class="reflection">Reflection: I explored career paths and found myself really interested in I.T. I enjoy working with computers and understanding how things work behind the scenes. The more I learn about tech, the more I feel like this could actually be the right fit for me in the future.</div>
+        </div>
+        <div class="category">
+          <h5>Moral Development</h5>
+          <p>Respected different opinions.</p>
+          <button class="btn btn-sm btn-reflection" onclick="toggleReflection(this)">Show Reflection</button>
+          <div class="reflection">Reflection: I started to really understand that not everyone thinks the same way I do and that’s okay. I learned to listen more and respect other people’s opinions, even if I didn’t always agree. It helped me become more open-minded and better at handling different points of view.</div>
+        </div>
+        <div class="category">
+          <h5>Psychosocial Development</h5>
+          <p>Focused on self-growth.</p>
+          <button class="btn btn-sm btn-reflection" onclick="toggleReflection(this)">Show Reflection</button>
+          <div class="reflection">Reflection: Around this age, I really started paying more attention to myself not just physically, but mentally and emotionally too. I tried to understand who I am, what I want, and what makes me happy. It wasn’t always easy, but focusing on self-growth helped me become more confident and grounded.</div>
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <div class="nav-buttons">
+        <button onclick="navigateAge(-1)">← Previous</button>
+        <button onclick="navigateAge(1)">Next →</button>
+      </div>
+    </div>
+
+    <!-- Image Section -->
+    <div id="age-image-container" class="ms-4" style="width: 500px; height: 500px; border: 2px solid #ffcc00; border-radius: 10px; padding: 10px; background-color: #333; display: flex; justify-content: center; align-items: center;">
+      <img id="age-image" src="Age-1-3.jpg" alt="Age Image" class="reflection-image" style="max-width: 100%; max-height: 100%; object-fit: cover;" />
+    </div>
+    
+  </div>
+
+  <script>
+    let currentAgeIndex = 0;
+    const ageBlocks = document.querySelectorAll('.age-block');
+    const ageImage = document.getElementById('age-image');
+
+    // Array of image paths corresponding to each age block
+    const ageImages = [
+  'images/age-1-3.jpg',
+  'images/age-4-7.jpg',
+  'images/age-8-11.jpg',
+  'images/age-12-15.jpg',
+  'images/age-16-17.jpg',
+];
+
+    function toggleReflection(button) {
+      const reflection = button.nextElementSibling;
+      if (reflection.classList.contains('show')) {
+        reflection.classList.remove('show');
+        button.textContent = 'Show Reflection';
+      } else {
+        reflection.classList.add('show');
+        button.textContent = 'Hide Reflection';
+      }
+    }
+
+    function navigateAge(direction) {
+  ageBlocks[currentAgeIndex].classList.remove('active');
+  currentAgeIndex += direction;
+
+  // Loop navigation
+  if (currentAgeIndex < 0) {
+    currentAgeIndex = ageBlocks.length - 1;
+  } else if (currentAgeIndex >= ageBlocks.length) {
+    currentAgeIndex = 0;
+  }
+
+  ageBlocks[currentAgeIndex].classList.add('active');
+
+  // Update image manually based on index
+  if (currentAgeIndex === 0) {
+    ageImage.src = 'Age-1-3.jpg';
+  } else if (currentAgeIndex === 1) {
+    ageImage.src = 'Age-4-7.jpg';
+  } else if (currentAgeIndex === 2) {
+    ageImage.src = 'Age-8-11.jpg';
+  } else if (currentAgeIndex === 3) {
+    ageImage.src = 'Age-12-15.jpg';
+  } else if (currentAgeIndex === 4) {
+    ageImage.src = 'Age-16-17.jpg';
+  }
+}
+
+;
+
+    
+  </script>
+</body>
+</html>
